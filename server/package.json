@@ -1,0 +1,24 @@
+{
+  "name": "omegly_server",
+  "version": "1.0.0",
+  "description": "this is for omegly server",
+  "keywords": [
+    "omegly"
+  ],
+  "license": "ISC",
+  "author": "ritikraj07",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0",
+    "express-rate-limit": "^8.7.5",
+    "helmet": "^8.3.0",
+    "socket.io": "^4.8.4"
+  }
+}
