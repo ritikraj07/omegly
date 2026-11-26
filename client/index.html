@@ -2,12 +2,55 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" href="/images/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+<link rel="manifest" href="/images/site.webmanifest" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>client</title>
+    <meta name="theme-color" content="#150F22" />
+
+    <!-- Static SEO fallback for crawlers that don't run JavaScript.
+         data-rh="true" lets react-helmet-async replace these once React loads,
+         so you don't end up with duplicate tags. -->
+    <title data-rh="true">Omegly: Free Random Text Chat, an Omegle Alternative</title>
+    <meta data-rh="true" name="description" content="Talk to strangers online with Omegly, a free random text chat. No sign-up, with gender, country and age filters. A simple Omegle alternative for adults 18+." />
+    <link data-rh="true" rel="canonical" href="https://www.omegly.in/" />
+    <meta data-rh="true" name="robots" content="index, follow, max-image-preview:large" />
+    <meta data-rh="true" property="og:type" content="website" />
+    <meta data-rh="true" property="og:site_name" content="Omegly" />
+    <meta data-rh="true" property="og:title" content="Omegly: Free Random Text Chat, an Omegle Alternative" />
+    <meta data-rh="true" property="og:description" content="Talk to strangers online with Omegly, a free random text chat. No sign-up, with gender, country and age filters." />
+    <meta data-rh="true" property="og:url" content="https://www.omegly.in/" />
+    <meta data-rh="true" property="og:image" content="https://www.omegly.in/og-image.png" />
+    <meta data-rh="true" name="twitter:card" content="summary_large_image" />
+
+    <!-- Fonts (id matches the check in Home.jsx and Chat.jsx, so they skip re-adding it) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      id="omegly-fonts"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600&display=swap"
+    />
   </head>
-  <body>
-    <div id="root"></div>
+  <body style="margin:0;background:#150F22">
+    <div id="root">
+      <noscript>
+        <h1>Omegly: talk to strangers online, no sign-up</h1>
+        <p>
+          Omegly is a free random text chat for adults aged 18 and over. Set who
+          you'd like to meet by gender, country and age range, get matched, and
+          skip whenever you like. It's a simple Omegle alternative that works in
+          your browser.
+        </p>
+        <p>Please enable JavaScript to start chatting.</p>
+        <a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms</a>
+      </noscript>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

@@ -1,11 +1,17 @@
 import { Box, Container, Typography, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import Seo from "../components/Seo";
+
+// Privacy page
+
+
 
 export default function PrivacyPolicy() {
   const navigate = useNavigate();
 
   return (
     <Box sx={{ minHeight: "100vh", bgcolor: "#080B14", color: "white", py: 5 }}>
+<Seo title="Privacy Policy | Omegly" description="How Omegly handles your data and privacy." path="/privacy" />
       <Container maxWidth="md">
         <Button onClick={() => navigate("/")} sx={{ mb: 3 }}>
           ← Back to Home

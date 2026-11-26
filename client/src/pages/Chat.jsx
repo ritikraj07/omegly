@@ -1,4 +1,8 @@
 import { useState, useEffect, useRef, useCallback } from "react";
+import Seo from "../components/Seo";
+
+
+
 import {
   Box,
   Button,
@@ -1089,6 +1093,8 @@ export default function Chat() {
           ${C.bg}`,
       }}
     >
+      // Chat page
+      <Seo title="Chat | Omegly" path="/chat" noindex />
       <Container
         maxWidth="md"
         disableGutters={isMobile}
@@ -1619,7 +1625,6 @@ export default function Chat() {
           </Box>
         </Box>
       </Container>
-
       {/* Setup dialog */}
       <Dialog
         open={setupOpen}
@@ -1691,7 +1696,6 @@ export default function Chat() {
           )}
         </DialogContent>
       </Dialog>
-
       {/* Preferences drawer (mobile) */}
       <Drawer
         anchor="right"
@@ -1735,7 +1739,6 @@ export default function Chat() {
           onConsent={updateConsent}
         />
       </Drawer>
-
       <Snackbar
         open={!!toast}
         autoHideDuration={2500}

@@ -1,11 +1,16 @@
 import { Box, Container, Typography, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import Seo from "../components/Seo";
+
+
+// Terms page
 
 export default function Terms() {
   const navigate = useNavigate();
 
   return (
     <Box sx={{ minHeight: "100vh", bgcolor: "#080B14", color: "white", py: 5 }}>
+<Seo title="Terms of Use | Omegly" description="The terms for using Omegly. Adults 18+ only." path="/terms" />
       <Container maxWidth="md">
         <Button onClick={() => navigate("/")} sx={{ mb: 3 }}>
           ← Back to Home
