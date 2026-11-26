@@ -1,84 +1,59 @@
-import { Box, Container, Typography, Button } from "@mui/material";
-import { useNavigate } from "react-router-dom";
-import Seo from "../components/Seo";
+import LegalLayout from "../components/LegalLayout";
 
-// Privacy page
+// Set this to your real contact address. While it is empty, the Contact
+// section is hidden instead of showing placeholder text to visitors.
+const CONTACT_EMAIL = "";
 
-
+const sections = [
+  {
+    heading: "Introduction",
+    body: "This policy explains how Omegly handles information when you use our anonymous text-chat service. By using Omegly, you agree to this policy.",
+  },
+  {
+    heading: "Information You Provide",
+    body: "You may provide profile preferences such as your age, gender, and country, and choose who you would like to be matched with. We use this to pair you with other users. Do not enter passwords, financial information, or other sensitive personal data.",
+  },
+  {
+    heading: "Chat Messages",
+    body: "Messages are relayed through our servers to the person you are matched with. Do not assume conversations are private or confidential, and avoid sharing information that could identify you. Other users can copy or screenshot what you write. Omegly may keep limited records where needed for safety, abuse prevention, or legal compliance.",
+  },
+  {
+    heading: "Cookies and Technical Data",
+    body: "Omegly and its hosting providers may process technical information such as IP addresses, connection details, and security logs. Your browser also stores your profile preferences and your confirmation of the age and safety checkboxes in local storage on your own device, so you do not have to re-enter them. You can clear this at any time in your browser settings.",
+  },
+  {
+    heading: "Third-Party Services",
+    body: "Omegly relies on hosting and infrastructure providers to operate the service. The site also loads fonts from Google Fonts, which means your browser connects to Google's servers when you visit. These providers handle data under their own policies and agreements.",
+  },
+  ...(CONTACT_EMAIL
+    ? [
+        {
+          heading: "Contact",
+          body: (
+            <>
+              Questions about this policy? Email us at{" "}
+              <a href={`mailto:${CONTACT_EMAIL}`} style={{ color: "#FFB07A" }}>
+                {CONTACT_EMAIL}
+              </a>
+              .
+            </>
+          ),
+        },
+      ]
+    : []),
+];
 
 export default function PrivacyPolicy() {
-  const navigate = useNavigate();
-
   return (
-    <Box sx={{ minHeight: "100vh", bgcolor: "#080B14", color: "white", py: 5 }}>
-<Seo title="Privacy Policy | Omegly" description="How Omegly handles your data and privacy." path="/privacy" />
-      <Container maxWidth="md">
-        <Button onClick={() => navigate("/")} sx={{ mb: 3 }}>
-          ← Back to Home
-        </Button>
-
-        <Typography variant="h3" fontWeight={800} mb={2}>
-          Privacy Policy
-        </Typography>
-
-        <Typography color="#929BB0" mb={4}>
-          Last updated: November 23, 2026
-        </Typography>
-
-        <Typography variant="h6" fontWeight={700} mb={1}>
-          1. Introduction
-        </Typography>
-        <Typography color="#B0B8C8" mb={3}>
-          This policy explains how Omegly handles information when you use our
-          anonymous text-chat service.
-        </Typography>
-
-        <Typography variant="h6" fontWeight={700} mb={1}>
-          2. Information You Provide
-        </Typography>
-        <Typography color="#B0B8C8" mb={3}>
-          You may provide profile preferences such as age, gender, country, and
-          interests to help match you with other users. Do not enter passwords,
-          financial information, or other sensitive personal data.
-        </Typography>
-
-        <Typography variant="h6" fontWeight={700} mb={1}>
-          3. Chat Messages
-        </Typography>
-        <Typography color="#B0B8C8" mb={3}>
-          Do not assume conversations are private or confidential. Avoid sharing
-          information that could identify or expose you. The actual handling and
-          retention of chat data will depend on the service's implemented
-          technical and moderation policies.
-        </Typography>
-
-        <Typography variant="h6" fontWeight={700} mb={1}>
-          4. Cookies and Technical Data
-        </Typography>
-        <Typography color="#B0B8C8" mb={3}>
-          The service or its hosting providers may process technical information
-          such as IP addresses, connection details, and security logs. Update
-          this section to reflect the actual analytics, cookies, and logging
-          tools used by Omegly.
-        </Typography>
-
-        <Typography variant="h6" fontWeight={700} mb={1}>
-          5. Third-Party Services
-        </Typography>
-        <Typography color="#B0B8C8" mb={3}>
-          Omegly may rely on hosting or infrastructure providers to operate the
-          service. Their handling of data is subject to their own policies and
-          applicable agreements.
-        </Typography>
-
-        <Typography variant="h6" fontWeight={700} mb={1}>
-          6. Contact
-        </Typography>
-        <Typography color="#B0B8C8">
-          Add an official Omegly contact email here before publishing this
-          policy.
-        </Typography>
-      </Container>
-    </Box>
+    <LegalLayout
+      seo={{
+        title: "Privacy Policy | Omegly",
+        description: "How Omegly handles your data and privacy.",
+        path: "/privacy",
+      }}
+      title="Privacy Policy"
+      updated="November 23, 2026"
+      sections={sections}
+    />
   );
 }
